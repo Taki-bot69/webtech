@@ -1,0 +1,476 @@
+/* General body styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Jolly Lodger';
+    background-color: #1a1a1a;
+    color: white;
+}
+
+
+/* Top navigation bar */
+.top-nav {
+    background-color: #000000;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-nav .nav-left a {
+    color: #fff;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 1.4rem;
+}
+
+.top-nav .nav-right a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+
+.top-nav a:hover {
+    color: #ff9800;
+}
+
+/* Main navigation with logo and menu */
+.main-nav {
+    background-color: #141414;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.main-nav .logo a {
+    color: #fff;
+    font-size:  2.4rem;
+    text-decoration: none;
+}
+
+
+.main-nav .menu {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+
+.main-nav .menu li a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.4rem;
+}
+
+.main-nav .menu li a:hover {
+    color: #ff9800;
+}
+
+.main-nav .nav-icons a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 15px;
+    font-size: 1.2rem;
+}
+
+.main-nav .nav-icons a:hover {
+    color: #ff9800;
+}
+
+/* Header section with "Level Up" background */
+header {
+    background-image: url('images/elden.png'); /* Replace with actual image path */
+    background-size: cover;
+    background-position: center;
+    height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    color: white;
+    z-index: 2; /* Lower z-index so dropdown appears above */
+}
+header::before{
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; 
+
+}
+header p{
+    z-index: 2;
+}
+
+
+header h1 {
+    z-index: 2; /* Text above the overlay but still below the dropdown */
+    font-size: 3rem;
+}
+
+
+.auth-buttons {
+    margin-top: 20px;
+    z-index: 3;
+}
+
+.auth-buttons button {
+    background-color: black;
+    color: #FFA500;
+    border: 1px solid #FFA500;
+    padding: 10px 20px;
+    margin: 0 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.auth-buttons button:hover {
+    background-color: #e68a00;
+}
+
+/* Main Content Section */
+
+/* Main Content Section */
+.main-content {
+    position: relative; /* Needed for absolute positioning of the pseudo-element */
+    background-image: url('images/elden2.jpg'); /* Replace with actual background image */
+    background-size: cover;
+    background-position: center;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 1000px;
+    padding: 20px;
+}
+
+.main-content::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; 
+}
+.content-box {
+    position: relative;
+    width: 400px;
+    height: 600px;
+    border: 5px solid black;
+    overflow: hidden; /* To ensure overlay stays within bounds */
+    z-index: 2;
+}
+
+/* Image with semi-transparent white overlay */
+.content-box::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.5); /* White background with 50% opacity */
+    z-index: 1; /* Ensures the overlay stays above the image but below the text */
+}
+
+.content-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: relative;
+    z-index: 0; /* Keeps the image behind the overlay */
+}
+
+.text-overlay {
+    position: absolute;
+    bottom: 250px;
+    left: 50%;
+    font-size: 1.5rem;
+    transform: translateX(-50%);
+    color: black;
+    font-size: 2rem;
+    font-weight: bold;
+    z-index: 2; /* Text stays above everything */
+    padding: 10px 20px;
+    border-radius: 10px;
+}
+/* Zoom effect on hover */
+.content-box:hover .content-image {
+    transform: scale(1.1); /* Scale the image by 10% */
+}
+
+/* Smooth transition effect */
+.content-image {
+    transition: transform 0.3s ease-in-out; /* Apply a smooth transition when the image scales */
+}
+
+
+
+
+/* Manga Section */
+.manga-section {
+    position: relative;
+    background-image: url('images/cover.jpeg');
+    background-size: cover;
+    background-position: center;
+    text-align: center;
+    overflow: hidden; 
+}
+
+.manga-section::before {
+    content: ""; 
+    position: absolute; 
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1; 
+}
+.manga-section h1 {
+    position: relative; /* Positioning text above the overlay */
+    color: white; /* Ensure text is fully visible */
+    z-index: 2; /* Ensures text is above the overlay */
+}
+
+.manga-row {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    z-index: 2;
+}
+
+.manga-row img {
+    width: 270px; /* Adjust width as needed */
+    margin: 5px;
+    padding: 2%;
+    z-index: 3;
+}
+/* Zoom effect on hover */
+.manga-row img:hover{
+    transform: scale(1.1); /* Scale the image by 10% */
+}
+
+/* Smooth transition effect */
+.manga-row img{
+    transition: transform 0.3s ease-in-out; /* Apply a smooth transition when the image scales */
+}
+/* General Menu Styles */
+.menu {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+.menu li {
+    position: relative; /* Required for dropdown positioning */
+}
+
+.menu a {
+    text-decoration: none;
+    color: white;
+    padding: 15px 20px;
+    display: block;
+}
+
+.menu a:hover {
+    background-color: #222; /* Smooth hover effect */
+    color: #ff9800; /* Highlighted text color on hover */
+    transition: background-color 0.3s ease; /* Smooth background transition */
+}
+
+/* Dropdown Menu */
+.dropdown-content {
+    display: none; /* Hidden initially */
+    position: absolute;
+    background-color: #1a1a1a; /* Darker background */
+    min-width: 150px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3); /* Shadow for depth */
+    z-index: 9; /* Increased z-index to stay above the header */
+    top: 100%;
+    left: 0; /* Aligns the dropdown to the left */
+    border-radius: 5px; /* Rounded corners */
+    overflow: hidden;
+}
+
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content a {
+    display: flex; /* To align GIFs and text */
+    margin-right: 70px;
+    align-items: center;
+    color: #fff;
+    font-family: 'Jolly Lodger';
+}
+
+.dropdown-content a:hover {
+    background-color: #444; /* Darker hover background */
+    color: #ff9800;
+    transition: all 0.3s ease; /* Smooth hover transitions */
+}
+
+/* Show the dropdown when hovering over parent */
+.menu li:hover .dropdown-content {
+    display: block;
+}
+
+/* Mini GIF Styles */
+.mini-gif {
+    width: 80px;
+    height: 50px;
+    margin-right: 10px; /* Reduced space between GIF and text */
+    border-radius: 5px; /* Rounded GIF corners */
+}
+/* Subscribe section styles */
+.subscribe-section {
+    background-color: #333;
+    padding: 40px 0;
+    text-align: center;
+}
+
+.subscribe-section h2 {
+    color: white;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.subscribe-form {
+    display: inline-block;
+}
+
+.subscribe-form input[type="email"] {
+    padding: 10px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 5px;
+    width: 250px;
+    margin-right: 10px;
+}
+
+.subscribe-form button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: white;
+    background-color: #555;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.subscribe-form button:hover {
+    background-color: #777;
+}
+
+/* Footer styles */
+.site-footer {
+    background-color: #1a1a1a;
+    color: white;
+    padding: 20px 0;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.branding h1 {
+    font-size: 3rem;
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    margin: 0;
+    color: white;
+}
+
+.footer-icons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+    margin: 20px 0;
+}
+
+.footer-icons img {
+    max-width: 60px;
+    height: auto;
+}
+
+.footer-text {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #fafafa;
+    margin-bottom: 10px;
+}
+
+.footer-text.small {
+    font-size: 0.8rem;
+    margin-top: 10px;
+}
+
+footer .footer-text a {
+    color: #fafafa;
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+footer .footer-text a:hover {
+    text-decoration: underline;
+}
+footer{
+    background-color: #000000;
+}
+/* Fullscreen intro screen */
+.intro-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black; /* Background color of the intro */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100; /* Makes sure it's on top of everything */
+}
+
+/* Styling the intro text */
+.intro-text {
+    color: white;
+    font-family: 'Jolly Lodger', cursive;
+    font-size: 4rem;
+    opacity: 0;
+    animation: fadeInOut 4s ease forwards;
+}
+
+/* Keyframes for fade-in and fade-out effect */
+@keyframes fadeInOut {
+    0% {
+        opacity: 0;
+    }
+    20% {
+        opacity: 1;
+    }
+    40% {
+        opacity: 1;
+    }
+    80% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 0;
+    }
+}

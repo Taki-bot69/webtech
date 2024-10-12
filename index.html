@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
+    <title>Level Up</title>
+</head>
+<body>
+    <div id="intro" class="intro-screen">
+        <div class="burn-container">
+            <h1 class="intro-text">can you hear it?</h1>
+            <div class="burning-effect"></div>
+        </div>
+    </div>
+    
+    <!-- Top navigation bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <a href="#">Level Up</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="nav-right">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="logo">
+            <a href="index.html">Level Up</a>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Elements</a>
+                <ul class="dropdown-content">
+                    <li><a href="week.html"><img src="images/top.gif" alt="gif" class="mini-gif">Top Trending</a></li>
+                    <li><a href="count.html"><img src="images/release.gif" alt="gif" class="mini-gif">Anime/Game Release</a></li>
+                    <li><a href="release.html"><img src="images/game.gif" alt="gif" class="mini-gif">Game Forum</a></li>
+                    <li><a href="release2.html"><img src="images/anime.gif" alt="gif" class="mini-gif">Anime Forum</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Social</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-th"></i></a>
+        </div>
+    </nav>
+
+    <!-- Header section -->
+    <header>
+        <div class="overlay"></div>
+        <h1 style="font-size: 120px;">LEVEL UP</h1>
+        <p>A Homespace For Gamers  who likes to play EveryDay</p>
+        <div class="auth-buttons">
+            <button onclick="Login()">Login</button>
+            <button onclick="Signup()">Sign up</button>
+        </div>
+    </header>
+
+   <!-- Main Content Section -->
+<div class="main-content">
+    <div class="content-box">
+        <h2 class="text-overlay">Game News</h2>
+        <img src="images/genshin.jpeg" alt="Game News" class="content-image" />
+    </div>
+    <div class="content-box">
+        <h2 class="text-overlay">Anime News</h2>
+        <img src="images/quints.jpg" alt="Anime News" class="content-image" />
+    </div>
+</div>
+
+    <!-- Manga Section -->
+    <div class="manga-section">
+        <h1>New Manga Release</h1>
+        <div class="manga-row">
+            <img src="images/kanacover.jpg" alt="Manga 1" />
+            <h1>Action Fantasy</h1>
+            <img src="images/aotcover.png" alt="Manga 2" />
+            <img src="images/frieren.jpg" alt="Manga 3" />
+            <h1>Adventure/ Romance</h1>
+            <img src="images/aicover.png" alt="Manga 5" />
+        </div>
+        <div class="manga-row">
+            <img src="images/kurumicover.jpg" alt="Manga 6" />
+            <img src="images/dance.gif" style=" width: 80px;height: 50px;">
+            <img src="images/quintscover.jpg" alt="Manga 7" />
+            <img src="images/yozakura.jpg" alt="Manga 8" />
+            <img src="images/dance.gif"  style=" width: 80px;height: 50px;">
+            <img src="images/redo.jpg" alt="Manga 8" />
+            
+        </div>
+    </div>
+
+    <section class="subscribe-section">
+        <h2>Subscribe to Our News Daily</h2>
+        <form class="subscribe-form">
+            <input type="email" name="email" placeholder="Email*" required>
+            <button type="submit">Subscribe</button>
+        </form>
+    </section>
+  <script>
+    window.addEventListener('load', function () {
+        // Get the intro elements
+        const intro = document.getElementById('intro');
+        const introText = document.querySelector('.intro-text');
+        const burningEffect = document.querySelector('.burning-effect');
+
+        // Variables for timing
+        let startTime = null;
+        const duration = 5000; // 5 seconds for the animation
+
+        // Ease-out function for smoother animation
+        function easeOutQuad(t) {
+            return t * (2 - t);
+        }
+
+        // Animate function to gradually reduce opacity and scale
+        function animateBurn(timestamp) {
+            if (!startTime) startTime = timestamp;
+            const elapsed = timestamp - startTime;
+
+            // Calculate the progress (from 0 to 1)
+            const progress = Math.min(elapsed / duration, 1);
+            const easedProgress = easeOutQuad(progress);
+
+            // Gradually reduce opacity and increase blur
+            introText.style.opacity = 1 - easedProgress;
+            introText.style.filter = `blur(${easedProgress * 10}px)`; // Add blur effect
+            burningEffect.style.opacity = easedProgress; // Simulate burning effect
+
+            // If the animation is still running, keep calling animateBurn
+            if (progress < 1) {
+                requestAnimationFrame(animateBurn);
+            } else {
+                // When the animation finishes, hide the intro screen
+                intro.style.display = 'none';
+            }
+        }
+
+        // Start the animation
+        requestAnimationFrame(animateBurn);
+    });
+</script>
+
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="branding">
+                <h1>Level Up</h1>
+            </div>
+            <div class="footer-icons">
+                <i class="fab fa-playstation"></i>
+                <i class="fas fa-gamepad"></i>
+                <i class="fas fa-exclamation-triangle"></i>
+                <i class="fas fa-save"></i>
+            </div>
+            <p class="footer-text main-text">
+                2020 HK Group Inc. Developed in association with LoremTnc, IpsumCompany, SitAmetGroup, ComSit and related logos are registered trademarks. GodLike and related logos are registered trademarks or trademarks of id Software LLC in the U.S. and/or other countries. All other trademarks or trade names are the property of their respective owners. All Rights Reserved.
+            </p>
+            <p class="footer-text secondary-text">
+                Level Up © The Darkness™ is a font beginning there Over had moves go sand wherein, fruit very gathering of, female creepth. Dominion above sea gathered unto whales. Subdue to, have Life form firmament wherein. Great air without for, great him he That let earth together thing sea fly gathering.
+            </p>
+            <p class="footer-text small-text">
+                Privacy | Policy
+            </p>
+        </div>
+    </footer>
+
+</body>
+</html>
