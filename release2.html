@@ -5,21 +5,51 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Level Up - Game Blog</title>
     <link rel="stylesheet" href="releasestyles.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Jolly+Lodger&display=swap" rel="stylesheet">
 </head>
-<body>
-    <header>
-        <nav>
-            <div class="logo">Level Up</div>
-            <ul>
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Elements</a></li>
-                <li><a href="#">Social</a></li>
-            </ul>
-            <div class="social-icons">
-                <!-- Add your icons here -->
-            </div>
-        </nav>
-    </header>
+<body class="page2">
+    <!-- Top navigation bar -->
+    <nav class="top-nav">
+        <div class="nav-left">
+            <a href="#">Level Up</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+        </div>
+        <div class="nav-right">
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-facebook"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+    </nav>
+
+    <!-- Main Navigation -->
+    <nav class="main-nav">
+        <div class="logo">
+            <a href="index.html">Level Up</a>
+        </div>
+        <ul class="menu">
+            <li><a href="index.html">Home</a></li>
+            <li class="dropdown">
+                <a href="#">Elements</a>
+                <ul class="dropdown-content">
+                    <li><a href="week.html"><img src="images/top.gif" alt="gif" class="mini-gif">Top Trending</a></li>
+                    <li><a href="count.html"><img src="images/release.gif" alt="gif" class="mini-gif">Anime/Game Release</a></li>
+                    <li><a href="release.html"><img src="images/game.gif" alt="gif" class="mini-gif">Game Forum</a></li>
+                    <li><a href="release2.html"><img src="images/anime.gif" alt="gif" class="mini-gif">Anime Forum</a></li>
+                </ul>
+            </li>
+            <li><a href="#">Social</a></li>
+        </ul>
+        <div class="nav-icons">
+            <a href="#"><i class="fas fa-search"></i></a>
+            <a href="#"><i class="fas fa-shopping-cart"></i></a>
+            <a href="#"><i class="fas fa-th"></i></a>
+        </div>
+    </nav>
 
     <section class="hero">
         <div class="overlay">
@@ -30,90 +60,116 @@
     <main>
         <section class="blog-posts">
             <article>
-                <img src="images/Ai_Hoshino.png" alt="Game Image 1" width="100px" height="350px">
-                <br>
-                <br>
-                <h2>Game Blog Post:</h2>
-                <p>Date: September 11, 2024</p>
-                <br>
-                <br>
-                <br>
-                <br>
-                <p>Lorem ipsum text for the blog post preview goes here.</p>
-                <p>Rhoncus felis phasellus eget elit ipsum litora, mus posuere porta semper fringilla tempor ultricies lacinia nec id torquent hac etiam tempus, porttitor. Suscipit nostra laoreet in pulvinar primis molestie mattis. Lobortis felis.
-                    Vel egestas tortor porta rutrum sit nisi luctus blandit accumsan vel eu pharetra fusce auctor congue phasellus non.</p>
+                <img src="images/yozakura.png" alt="Game Image 1" style="width: 480px; height: 295px;">
+                <div class="post-content">
+                    <h2>Game Blog Post: Mission Yozakura Family</h2>
+                    <p>Date: October 11, 2024</p>
+                    <br>
+                    <br>
+                    <p>Ranked #1831  Popularity #2051  Members 108,776</p>
+                    <br>
+                    <br>
+                    <p>
+                        Mission: Yozakura Family is a Japanese manga series written and illustrated by Hitsuji Gondaira. It has been serialized in Shueisha's Weekly Shōnen Jump magazine since August 2019, with its chapters collected in 26 tankōbon volumes as of October 2024
+                    </p>
+                    <br>
+                    <br>
+                </div>
             </article>
+        
             <article>
-                <img src="images/yozakura.png" alt="Game Image 2">
-                <br>
-                <br>
-                <h2>Game Blog Post:</h2>
-                <p>Date: September 11, 2024</p>
-                <br>
-                <br>
-                <br>
-                <br>
-                <p>Lorem ipsum text for the blog post preview goes here.</p>
-                <p>Rhoncus felis phasellus eget elit ipsum litora, mus posuere porta semper fringilla tempor ultricies lacinia nec id torquent hac etiam tempus, porttitor. Suscipit nostra laoreet in pulvinar primis molestie mattis. Lobortis felis.
-                    Vel egestas tortor porta rutrum sit nisi luctus blandit accumsan vel eu pharetra fusce auctor congue phasellus non.</p>
+                <img src="images/Ai_Hoshino.png" alt="Game Image 1" style="width: 550px; height: 295px;">
+                <div class="post-content">
+                    <h2>Game Blog Post: Oshi No Ko</h2>
+                    <p>Date: October 11, 2024</p>
+                    <br>
+                    <br>
+                    <p>Ranked #93  Popularity #210  Members 874,898</p>
+                    <br>
+                    <br>
+                    <p>
+                        Oshi no Ko is a Japanese manga series written by Aka Akasaka and illustrated by Mengo Yokoyari. It has been serialized in Shueisha's Weekly Young Jump since April 2020, with its chapters collected in 15 tankōbon volumes as of July 2024.
+                    </p>
+                    <br>
+                    <br>
+                </div>
             </article>
         </section>
+        
 
         <aside class="sidebar">
             <h3>Recent Post</h3>
             <ul class="recent-posts">
                 <li>
-                    <img src="images/magi.jpg" style="height: 70px;" alt="Post Title 1" >
-                    <p>September 11, 2024</p>
+                    <img src="images/your.jpg" style="height: 90px; width: 150px;" alt="Post Title 1" >
+                    <p>Your Name</p>
                 </li>
                 <li>
-                    <img src="images/highdxd.jpg" alt="Post Title 2" style="height: 70px;">
-                    <p>September 11, 2024</p>
+                    <img src="images/ovl.jpg" style="height: 90px; width: 150px;" alt="Post Title 1" >
+                    <p>Overlord</p>
                 </li>
                 <li>
-                    <img src="images/naruto.png" style="height: 70px;"" alt="Post Title 1" >
-                    <p>September 11, 2024</p>
+                    <img src="images/ragna.jpg" style="height: 90px; width: 170px;" alt="Post Title 1" >
+                    <p>Ragna Crimson</p>
                 </li>
                 <li>
-                    <img src="images/tenki.jpg" alt="Post Title 2" style="height: 70px;">
-                    <p>September 11, 2024</p>
+                    <img src="images/highdxd.jpg" style="height: 90px; width: 150px;" alt="Post Title 1" >
+                    <p>Highschool DXD</p>
                 </li>
                 
             </ul>
             <h3>Popular Post</h3>
             <ul class="recent-posts">
                 <li>
-                    <img src="images/ragna.jpg" alt="Post Title 1" style="height: 70px;">
-                    <p>September 11, 2024</p>
+                    <img src="images/eminencel.png" style="height: 90px; width: 170px;" alt="Post Title 1" >
+                    <p>Eminence in Shadow</p>
                 </li>
                 <li>
-                    <img src="images/ovl.jpg" alt="Post Title 2" style="height: 70px;">
-                    <p>September 11, 2024</p>
+                    <img src="images/magi.jpg" style="height: 90px; width: 150px;" alt="Post Title 1" >
+                    <p>Magi</p>
                 </li>
                 <li>
-                    <img src="images/ereh.jpg" alt="Post Title 1" style="height: 70px;">
-                    <p>September 11, 2024</p>
+                    <img src="images/ereh.jpg" style="height: 90px; width:150px;" alt="Post Title 1" >
+                    <p>Attack on Titan</p>
                 </li>
                 <li>
-                    <img src="images/your.jpg" alt="Post Title 2" style="height: 70px;">
-                    <p>September 11, 2024</p>
+                    <img src="images/86.jpg" style="height: 90px; width: 150px;" alt="Post Title 1" >
+                    <p>86</p>
                 </li>
             </ul>
             
         </aside>
     </main>
-
-    <footer>
-        <form>
-            <label for="email">Subscribe to Our News Daily</label>
-            <input type="email" id="email" placeholder="Email">
+    <section class="subscribe-section">
+        <h2>Subscribe to Our News Daily</h2>
+        <form class="subscribe-form">
+            <input type="email" name="email" placeholder="Email*" required>
             <button type="submit">Subscribe</button>
         </form>
-        <div class="logos">
-            <!-- Add platform logos here -->
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="footer-section">
+        <div class="footer-content">
+            <div class="branding">
+                <h1>Level Up</h1>
+            </div>
+            <div class="footer-icons">
+                <i class="fab fa-playstation"></i>
+                <i class="fas fa-gamepad"></i>
+                <i class="fas fa-exclamation-triangle"></i>
+                <i class="fas fa-save"></i>
+            </div>
+            <p class="footer-text main-text">
+                2020 HK Group Inc. Developed in association with LoremTnc, IpsumCompany, SitAmetGroup, ComSit and related logos are registered trademarks. GodLike and related logos are registered trademarks or trademarks of id Software LLC in the U.S. and/or other countries. All other trademarks or trade names are the property of their respective owners. All Rights Reserved.
+            </p>
+            <p class="footer-text secondary-text">
+                Level Up © The Darkness™ is a font beginning there Over had moves go sand wherein, fruit very gathering of, female creepth. Dominion above sea gathered unto whales. Subdue to, have Life form firmament wherein. Great air without for, great him he That let earth together thing sea fly gathering.
+            </p>
+            <p class="footer-text small-text">
+                Privacy | Policy
+            </p>
         </div>
     </footer>
-
-    <script src="scripts.js"></script>
 </body>
 </html>

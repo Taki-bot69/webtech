@@ -80,21 +80,24 @@ body {
     color: #ff9800;
 }
 
-.top-levelup{
+.top-levelup {
     text-align: center;
-    background-image: url("images/count.jpg");
-    height: 250px;
-
+    background-image: url("images/cover2.jpg");
+    background-size: cover;  /* Make the image cover the entire section */
+    background-position: center;  /* Ensure the image is centered */
+    height: 250px;  /* Adjust as needed */
+    width: 100%;  /* Ensure it spans the full width */
+    position: relative;  /* Needed for the overlay */
 }
-.top-levelup::before{
+.top-levelup::before {
     content: ""; 
+    position: absolute;  /* Position it relative to the container */
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.4);
-    z-index: 1; 
-
+    background-color: rgba(0, 0, 0, 0.4);  /* Add a dark overlay */
+    z-index: 1;  /* Ensure it's behind the text but above the image */
 }
 .top-levelup h1{
     position: relative;
@@ -183,7 +186,7 @@ p {
 
 /* Background images for the highlight sections */
 .highlight-section {
-    background-image: url("images/darksouls.jpg");
+    background-image: url("images/cover3.jpg");
     background-size: cover;
     background-position: center;
     border-radius: 8px;

@@ -54,70 +54,65 @@
     <br>
     <br>
     <h1 style="font-size: 70px;">LEVEL UP</h1>
-
 </section>
 
-
-    <!-- Weekly Highlights Section -->
-    <section class="weekly-highlights">
-
-        <!-- Game of the Week Section -->
-        <div class="highlight-section">
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2 class="highlight-title">Elden Ring DLC</h2>
-            <div class="highlight-content">
-                <div class="highlight-image-container">
-                    <img src="images/count.jpg" alt="Genshin Impact" class="highlight-image">
-                    <br>
-                </div>
-                <div class="highlight-info">
-                    <h3 style="font-size: 4.0rem; margin-left: 500px;">Count Down</h3>
-                    <br>
-                    <p style=" margin-left: 400px;font-size: 1.5rem;"><strong style="font-size: 4.5rem;">00</strong>days<strong style="font-size: 4.5rem;">00</strong>Hours<strong style="font-size: 4.5rem;">00</strong>Minutes<strong style="font-size: 4.5rem;">00</strong>Seconds</p>
-
-                  
-                </div>
+<!-- Weekly Highlights Section -->
+<section class="weekly-highlights">
+    <!-- Game of the Week Section -->
+    <div class="highlight-section">
+        <br><br><br><br><br>
+        <h2 class="highlight-title">Elden Ring DLC</h2>
+        <div class="highlight-content">
+            <div class="highlight-image-container">
+                <img src="images/count.jpg" alt="Genshin Impact" class="highlight-image">
+            </div>
+            <div class="highlight-info">
+                <h3 style="font-size: 4.0rem; margin-left: 500px;">Count Down</h3>
+                <br>
+                <p style="margin-left: 400px;font-size: 1.5rem;">
+                    <strong id="days" style="font-size: 4.5rem;">00</strong>days
+                    <strong id="hours" style="font-size: 4.5rem;">00</strong>Hours
+                    <strong id="minutes" style="font-size: 4.5rem;">00</strong>Minutes
+                    <strong id="seconds" style="font-size: 4.5rem;">00</strong>Seconds
+                </p>
+                <p style="margin-left: 450px;font-size: 4.5rem; margin-top: 100px;"><strong>PreOrdered</strong>: <strong>99</strong></p>
             </div>
         </div>
+    </div>
 
-        <!-- Anime of the Week Section -->
-        <div class="anime">
-            <br>
-            <br>
-            <br>
-            <br>
-            <h2 class="highlight-title">Solo Leveling Episode 9</h2>
-            <div class="highlight-content">
-                <div class="highlight-image-container">
-                    <br>
-                    <img src="images/solo.jpg" alt="Quintessential Quintuplets" class="highlight-image">
-                </div>
-                <div class="highlight-info">
-                    <h3 style="font-size: 4.0rem; margin-left: 500px;">Count Down</h3>
-                    <br>
-                    <p style=" margin-left: 400px;font-size: 1.5rem;"><strong style="font-size: 4.5rem;">00</strong>days<strong style="font-size: 4.5rem;">00</strong>Hours<strong style="font-size: 4.5rem;">00</strong>Minutes<strong style="font-size: 4.5rem;">00</strong>Seconds</p>
-
-                </div>
+    <!-- Anime of the Week Section -->
+    <div class="anime">
+        <br><br><br><br>
+        <h2 class="highlight-title">Solo Leveling Episode 9</h2>
+        <div class="highlight-content">
+            <div class="highlight-image-container">
+                <img src="images/solo.jpg" alt="Quintessential Quintuplets" class="highlight-image">
+            </div>
+            <div class="highlight-info">
+                <h3 style="font-size: 4.0rem; margin-left: 500px;">Count Down</h3>
+                <br>
+                <p style="margin-left: 400px;font-size: 1.5rem;">
+                    <strong id="days2" style="font-size: 4.5rem;">00</strong>days
+                    <strong id="hours2" style="font-size: 4.5rem;">00</strong>Hours
+                    <strong id="minutes2" style="font-size: 4.5rem;">00</strong>Minutes
+                    <strong id="seconds2" style="font-size: 4.5rem;">00</strong>Seconds
+                </p>
+                <p style="margin-left: 450px;font-size: 4.5rem; margin-top: 100px;"><strong>Views</strong>: <strong>1,800</strong></p>
             </div>
         </div>
+    </div>
+</section>
 
-    </section>
+<section class="subscribe-section">
+    <h2>Subscribe to Our News Daily</h2>
+    <form class="subscribe-form">
+        <input type="email" name="email" placeholder="Email*" required>
+        <button type="submit">Subscribe</button>
+    </form>
+</section>
 
-    <section class="subscribe-section">
-        <h2>Subscribe to Our News Daily</h2>
-        <form class="subscribe-form">
-            <input type="email" name="email" placeholder="Email*" required>
-            <button type="submit">Subscribe</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-   <!-- Footer Section -->
-   <footer class="footer-section">
+<!-- Footer -->
+<footer class="footer-section">
     <div class="footer-content">
         <div class="branding">
             <h1>Level Up</h1>
@@ -140,6 +135,55 @@
     </div>
 </footer>
 
+<script>
+    // Countdown for Elden Ring DLC
+    const targetDate = new Date("2024-12-31T00:00:00"); // Change the target date
+    const daysElement = document.getElementById('days');
+    const hoursElement = document.getElementById('hours');
+    const minutesElement = document.getElementById('minutes');
+    const secondsElement = document.getElementById('seconds');
+
+    function updateCountdown() {
+        const now = new Date();
+        const timeRemaining = targetDate - now;
+        
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        daysElement.textContent = days < 10 ? '0' + days : days;
+        hoursElement.textContent = hours < 10 ? '0' + hours : hours;
+        minutesElement.textContent = minutes < 10 ? '0' + minutes : minutes;
+        secondsElement.textContent = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    setInterval(updateCountdown, 1000);
+
+    // Countdown for Solo Leveling Episode 9
+    const targetDate2 = new Date("2024-12-31T00:00:00"); // Change the target date
+    const daysElement2 = document.getElementById('days2');
+    const hoursElement2 = document.getElementById('hours2');
+    const minutesElement2 = document.getElementById('minutes2');
+    const secondsElement2 = document.getElementById('seconds2');
+
+    function updateCountdown2() {
+        const now = new Date();
+        const timeRemaining = targetDate2 - now;
+        
+        const days = Math.floor(timeRemaining / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((timeRemaining % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        const minutes = Math.floor((timeRemaining % (1000 * 60 * 60)) / (1000 * 60));
+        const seconds = Math.floor((timeRemaining % (1000 * 60)) / 1000);
+
+        daysElement2.textContent = days < 10 ? '0' + days : days;
+        hoursElement2.textContent = hours < 10 ? '0' + hours : hours;
+        minutesElement2.textContent = minutes < 10 ? '0' + minutes : minutes;
+        secondsElement2.textContent = seconds < 10 ? '0' + seconds : seconds;
+    }
+
+    setInterval(updateCountdown2, 1000);
+</script>
 
 </body>
 </html>
